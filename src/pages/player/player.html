@@ -1,0 +1,54 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{player.firstname}} {{player.lastname}} Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  
+  <!--<ion-card>
+    <ion-card-content *ngFor="let players of player">
+      {{players.name}}  {{players.position}}
+      <p>Stats</p>
+
+
+    <ion-row>
+      <ion-col>
+        <button ion-button small outline color="secondary" (click)="onAddPlayerToTeam()">Add Player To Team</button>
+      </ion-col>
+    </ion-row>
+  </ion-card>-->
+  <ion-grid>
+		<ion-row>
+			<ion-col text-center>
+				<h2>{{ player.firstname }} {{player.lastname}}</h2>
+				<div class="subtitle">Position: {{ player.position}}</div>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col>
+				<ion-list>
+					<ion-item>
+            <p>Season Stats</p>
+					</ion-item>
+				</ion-list>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+      <ion-col col-6>
+				<button ion-button outline (click)="onAddPlayer()">Add Player</button>
+			</ion-col>
+      <ion-col col-6> 
+				<button ion-button outline (click)="onEditPlayer()">Edit Player</button>
+			</ion-col>
+		</ion-row>
+    <ion-row>
+			<ion-col>
+				<button ion-button block color="danger" (click)="onDeletePlayer()">Delete Player</button>
+			</ion-col>			
+		</ion-row>						
+	</ion-grid>
+</ion-content>

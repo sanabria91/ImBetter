@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Add Player</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-list>
+      <ion-item>
+        <ion-label>First Name</ion-label>
+        <ion-input type="text" [(ngModel)]='firstname'></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Last Name</ion-label>
+        <ion-input type="text" [(ngModel)]='lastname'></ion-input>
+      </ion-item>      
+      <ion-item>
+        <ion-label >Position</ion-label>
+        <ion-select [(ngModel)]='position'>
+          <ion-option *ngFor="let option of selectOption" [value]="option">{{option}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <button type="submit" ion-button block (click)="addPlayer(firstname,lastname,position)">Add Player</button>
+
+</ion-content>

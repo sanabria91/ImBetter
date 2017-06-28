@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="onNewPlayer()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Players</ion-title>
+  </ion-navbar>
+
+</ion-header>
+ 
+<ion-content padding>
+ <ion-list> 
+    <ion-item-sliding *ngFor="let players of player | async" (click)="onShowOptions(players.$key, players.firstname, players.lastname, players.position)">
+      <ion-item class="list">
+        <h2 >{{players.lastname}}, {{players.firstname}} <span id="position">{{players.position}}</span></h2>      
+      </ion-item>
+      <ion-item-options>
+        <button ion-button color="secondary">
+          <ion-icon name="person-add"></ion-icon>Add
+        </button>
+        <button ion-button color="danger">
+          <ion-icon name="trash"></ion-icon>
+          Delete
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+ </ion-list>
+</ion-content>
