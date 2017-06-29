@@ -30,8 +30,8 @@ export class PlayersListPage {
     this.navCtrl.push(AddPlayerPage);
   }
 
-  onShowOptions($key,firstname:string, lastname:string, position:string){
-    this.navCtrl.push(PlayerPage,{key:$key, firstname: firstname, lastname:lastname, position:position});
+  onShowOptions(player){
+    this.navCtrl.push(PlayerPage,{key:player.$key, firstname:player.firstname, lastname:player.lastname, position:player.position});
   }
 
 }

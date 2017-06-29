@@ -18,7 +18,7 @@
  
 <ion-content padding>
  <ion-list> 
-    <ion-item-sliding *ngFor="let players of player | async" (click)="onShowOptions(players.$key, players.firstname, players.lastname, players.position)">
+    <ion-item-sliding *ngFor="let players of player | async" (click)="onShowOptions(players)">
       <ion-item class="list">
         <h2 >{{players.lastname}}, {{players.firstname}} <span id="position">{{players.position}}</span></h2>      
       </ion-item>

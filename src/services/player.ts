@@ -21,7 +21,7 @@ export class PlayerService {
         this.afDatabase.list('/player').remove(id);
     }
 
-    updatePlayer(playerId:string,firstname:string,lastname:string, position:string){
+    updatePlayer(playerId,firstname:string,lastname:string, position:string){
         this.afDatabase.list('/player/').update(playerId,{firstname:firstname,lastname:lastname, position:position});
     }
 }
